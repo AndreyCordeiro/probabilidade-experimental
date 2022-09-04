@@ -2,6 +2,11 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
+        probabilidadeExperimental();
+        probabilidadeExata();
+    }
+
+    private static void probabilidadeExperimental() {
         Random random = new Random();
         int count = 0;
 
@@ -30,6 +35,31 @@ public class Main {
 
         System.out.println("Número de elementos maior ou igual a 10: " + count);
         System.out.println("Probabilidade Experimental: " + probabilidadeExperimental);
+    }
+
+    private static void probabilidadeExata() {
+        int count;
+        double countResult = 0;
+
+        for (int i = 1; i < 6; i++) {
+            for (int j = 1; j < 6; j++) {
+                //soma os valores de i e j e os adiciona na variável "count"
+                count = i + j;
+                for (int k = 1; k < 6; k++) {
+                    //soma o valor de k com os valores somados anteriormente e adiciona o novo valor na variável "count"
+                    count += k;
+
+                    //caso o valor de count seja maior ou igual a 10, soma-se 1 na variável "countResult"
+                    if (count >= 10) {
+                        countResult++;
+                        System.out.println("Números maior ou igual a 10: " + countResult);
+                    }
+                }
+            }
+        }
+        //realiza o cálculo do valor da probabilidade total
+        double valorTotal = countResult / 216;
+        System.out.println("Valor da probabilidade total = " + valorTotal);
     }
 }
 
