@@ -48,15 +48,15 @@ public class Main {
                 for (int k = 1; k < 6; k++) {
                     //soma o valor de k com os valores somados anteriormente e adiciona o novo valor na variável "count"
                     count += k;
-
+                     System.out.println("[" + i + "]" + "[" + j + "]" + "[" + k + "] = " + count);
                     //caso o valor de count seja maior ou igual a 10, soma-se 1 na variável "countResult"
                     if (count >= 10) {
                         countResult++;
-                        System.out.println("Números maior ou igual a 10: " + countResult);
                     }
                 }
             }
         }
+        System.out.println("Números maior ou igual a 10: " + countResult);
         //realiza o cálculo do valor da probabilidade total
         double valorTotal = countResult / 216;
         System.out.println("Valor da probabilidade total = " + valorTotal);
